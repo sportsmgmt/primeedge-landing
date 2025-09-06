@@ -1,0 +1,285 @@
+/*  Global Reset */
+html {
+  scroll-behavior: smooth;     /* Smooth animation */
+  scroll-padding-top: 80px;    /* Offset for sticky navbar */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #e8e5ec;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #111;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+nav .highlight {
+  color: #007bff; /* Blue */
+  font-size: 2.2rem; /* Bigger letters */
+  margin: 0 4px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff4444;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= HERO SECTION ================= */
+header {
+  background: url('https://as1.ftcdn.net/v2/jpg/02/87/04/00/1000_F_287040077_U2ckmhpzeyqDHiybj0dfCfX6NRCEKdoe.jpg')
+              no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { font-size: 1.2rem; margin-bottom: 20px; }
+header button {
+  background: red;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header button:hover {
+  background: darkred;
+  transform: scale(1.07);
+}
+
+/* ================= SECTIONS ================= */
+section {
+  scroll-margin-top: 80px;  /* prevents titles hiding under navbar */
+  padding-top: 100px;
+  max-width: 1000px;
+  margin:auto;
+}
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  width:100%;
+}
+.about p {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Services */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  text-align: center;
+}
+.service-card {
+  width: 220px;
+  transition: transform 0.3s;
+}
+.service-card:hover { transform: translateY(-5px); }
+.service-card img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* Athletes */
+.athletes-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+.athletes-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.athletes-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.athlete-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.athlete-card:hover { transform: translateY(-5px); }
+.athlete-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.athlete-card h3 { margin: 10px 0 8px; font-size: 1.2rem; font-weight: 600; }
+.athlete-card p { font-size: 0.95rem; color: #555; }
+
+/* ================= FAQ ================= */
+.faq-item { margin: 15px 0; }
+.faq-question {
+  background: #111;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: white;
+  padding: 0 15px;
+  border-radius: 0 0 8px 8px;
+}
+.faq-answer.show {
+  max-height: 1000px;
+  padding: 15px;
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+form input, form button {
+  padding: 10px;
+  font-size: 1rem;
+}
+form button {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+form button:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #ad4040;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.socials img {
+  height: 24px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  /* Mobile nav */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    padding: 20px;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Adjust text */
+  header h1 { font-size: 2.2rem; }
+  header p { font-size: 1rem; }
+  header button { padding: 10px 20px; font-size: 16px; }
+
+  /* Stack sections */
+  .services,
+  .athletes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .athlete-card,
+  .service-card,
+  form {
+    width: 90%;
+  }
+}
