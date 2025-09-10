@@ -1,8 +1,9 @@
 /*  Global Reset */
 html {
-  scroll-behavior: smooth;     /* Smooth animation */
-  scroll-padding-top: 80px;    /* Offset for sticky navbar */
+  scroll-behavior: smooth;     
+  scroll-padding-top: 80px;    
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   background: #e8e5ec;
   color: #111;
   line-height: 1.6;
@@ -21,7 +22,7 @@ nav {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #111;
+  background: #070505;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -38,8 +39,8 @@ nav .logo {
 }
 
 nav .highlight {
-  color: #007bff; /* Blue */
-  font-size: 2.2rem; /* Bigger letters */
+  color: #007bff;
+  font-size: 2.2rem;
   margin: 0 4px;
 }
 
@@ -50,7 +51,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: white;
+  color: rgb(249, 242, 242);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -67,27 +68,36 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-/* ================= HERO SECTION ================= */
+/* ================= HERO SECTION (VIDEO) ================= */
 header {
-  background: url('https://as1.ftcdn.net/v2/jpg/02/87/04/00/1000_F_287040077_U2ckmhpzeyqDHiybj0dfCfX6NRCEKdoe.jpg')
-              no-repeat center center/cover;
-  min-height: 100vh;
+  position: relative;
+  min-height: 87.3vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
-  position: relative;
+  color: rgb(10, 0, 0);
+  overflow: hidden;
   z-index: 1;
 }
 
+/* Dark overlay for readability */
 header::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(68, 22, 22, 0.288);
+  z-index: 0;
+}
+
+/* Video background */
+.video-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
   z-index: -1;
 }
 
@@ -110,17 +120,19 @@ header button:hover {
 
 /* ================= SECTIONS ================= */
 section {
-  scroll-margin-top: 80px;  /* prevents titles hiding under navbar */
+  scroll-margin-top: 80px;
   padding-top: 100px;
   max-width: 1000px;
-  margin:auto;
+  margin: auto;
 }
+
 section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 40px;
-  width:100%;
+  width: 100%;
 }
+
 .about p {
   text-align: center;
   max-width: 800px;
@@ -136,11 +148,14 @@ section h2 {
   gap: 30px;
   text-align: center;
 }
+
 .service-card {
   width: 220px;
   transition: transform 0.3s;
 }
+
 .service-card:hover { transform: translateY(-5px); }
+
 .service-card img {
   height: 50px;
   margin-bottom: 10px;
@@ -151,19 +166,22 @@ section h2 {
   text-align: center;
   padding: 50px 20px;
 }
+
 .athletes-section h2 {
   font-size: 2rem;
   margin-bottom: 30px;
   font-weight: bold;
 }
+
 .athletes-container {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
+
 .athlete-card {
-  background: #fff;
+  background: #60c59c9c;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
@@ -171,7 +189,9 @@ section h2 {
   text-align: center;
   transition: transform 0.3s;
 }
+
 .athlete-card:hover { transform: translateY(-5px); }
+
 .athlete-card img {
   width: 100%;
   height: 220px;
@@ -179,11 +199,21 @@ section h2 {
   border-radius: 10px;
   margin-bottom: 15px;
 }
-.athlete-card h3 { margin: 10px 0 8px; font-size: 1.2rem; font-weight: 600; }
-.athlete-card p { font-size: 0.95rem; color: #555; }
+
+.athlete-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.athlete-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
 
 /* ================= FAQ ================= */
 .faq-item { margin: 15px 0; }
+
 .faq-question {
   background: #111;
   color: white;
@@ -194,6 +224,7 @@ section h2 {
   display: flex;
   justify-content: space-between;
 }
+
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -202,6 +233,7 @@ section h2 {
   padding: 0 15px;
   border-radius: 0 0 8px 8px;
 }
+
 .faq-answer.show {
   max-height: 1000px;
   padding: 15px;
@@ -215,10 +247,12 @@ form {
   max-width: 400px;
   margin: auto;
 }
+
 form input, form button {
   padding: 10px;
   font-size: 1rem;
 }
+
 form button {
   background: red;
   color: white;
@@ -228,18 +262,42 @@ form button {
   transition: all 0.3s ease;
   margin-bottom: 20px;
 }
+
 form button:hover {
-  background: darkred;
+  background: rgba(247, 244, 244, 0);
   transform: scale(1.05);
 }
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+  background: #e4d2d252;
+}
 
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  max-width: 800px;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
 /* ================= FOOTER ================= */
 footer {
-  background: #ad4040;
-  color: white;
+  background: #91050553;
+  color: rgb(18, 7, 7);
   text-align: center;
   padding: 20px;
 }
+
 .socials img {
   height: 24px;
   margin: 0 10px;
@@ -259,9 +317,11 @@ footer {
     width: 220px;
     padding: 20px;
   }
+
   nav ul.show {
     display: flex;
   }
+
   .menu-toggle {
     display: block;
   }
@@ -277,6 +337,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
   .athlete-card,
   .service-card,
   form {
