@@ -23,7 +23,7 @@ nav {
   top: 0;
   width: 100%;
   background: #070505;
-  padding: 15px 20px;
+  padding: 5px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -359,3 +359,4 @@ footer {
     width: 90%;
   }
 }
+
